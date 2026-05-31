@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberShield Recovery — Green Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#1a2e1a;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);border-bottom:1px solid #C6E8D0;backdrop-filter:blur(10px);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-leaf{width:42px;height:42px;background:#065F46;border-radius:50% 0 50% 50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;}
+.logo-text{font-family:'DM Serif Display',serif;font-size:1.25rem;color:#064E3B;line-height:1.1;}
+.logo-text small{display:block;font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#6EE7B7;font-weight:500;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{color:#065F46;text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:#059669;}
+.nav-cta{background:#065F46;color:#fff!important;padding:.55rem 1.4rem;border-radius:50px;font-weight:600!important;transition:background .2s!important;}
+.nav-cta:hover{background:#047857!important;}
+
+/* HERO — editorial magazine style */
+.hero{padding-top:72px;background:#F0FDF4;}
+.hero-band{background:#065F46;padding:1rem 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.band-item{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:7px;}
+.band-item i{color:#6EE7B7;}
+.hero-main{display:grid;grid-template-columns:5fr 3fr;min-height:88vh;align-items:stretch;}
+.hero-content{padding:5% 6% 5% 6%;display:flex;flex-direction:column;justify-content:center;position:relative;}
+.hero-content::after{content:'';position:absolute;right:0;top:15%;bottom:15%;width:1px;background:linear-gradient(to bottom,transparent,#C6E8D0,transparent);}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#D1FAE5;border:1px solid #6EE7B7;border-radius:50px;padding:.35rem 1rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#065F46;font-weight:600;margin-bottom:1.75rem;width:fit-content;}
+.live-dot{width:7px;height:7px;background:#059669;border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,5vw,4.2rem);line-height:1.1;color:#022C22;margin-bottom:1.5rem;font-weight:400;}
+.hero h1 em{color:#059669;font-style:normal;}
+.hero-desc{font-size:1rem;color:#065F46;line-height:1.8;max-width:500px;margin-bottom:2.5rem;opacity:.8;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-green{background:#065F46;color:#fff;padding:.9rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .2s;}
+.btn-green:hover{background:#047857;transform:translateY(-2px);}
+.btn-green-out{border:1.5px solid #065F46;color:#065F46;padding:.9rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;transition:all .2s;}
+.btn-green-out:hover{background:#065F46;color:#fff;}
+.hero-sidebar{background:#065F46;padding:5% 5%;display:flex;flex-direction:column;justify-content:center;gap:0;}
+.sidebar-stat{padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.sidebar-stat:first-child{padding-top:0;}
+.sidebar-stat:last-child{border-bottom:none;}
+.ss-label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem;display:flex;align-items:center;gap:7px;}
+.ss-val{font-family:'DM Serif Display',serif;font-size:2.4rem;color:#fff;line-height:1;}
+.ss-sub{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.25rem;}
+
+/* TRUST */
+.trust{background:#fff;padding:1.5rem 6%;display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;border-bottom:1px solid #E8F5E9;}
+.t-item{display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;color:#065F46;text-transform:uppercase;letter-spacing:.06em;}
+.t-item i{color:#059669;}
+
+/* SERVICES */
+.services{padding:6rem 6%;background:#F0FDF4;}
+.svc-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:4rem;align-items:end;}
+.sec-tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:#059669;font-weight:700;margin-bottom:.6rem;}
+.sec-h{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,3vw,2.8rem);color:#022C22;font-weight:400;line-height:1.2;}
+.sec-sub{color:#065F46;font-size:.9rem;line-height:1.8;opacity:.75;}
+.svc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.svc-card{background:#fff;border:1px solid #C6E8D0;border-radius:20px;padding:2rem;transition:box-shadow .25s,transform .25s;}
+.svc-card:hover{box-shadow:0 12px 36px rgba(6,95,70,.1);transform:translateY(-4px);}
+.svc-ic{width:48px;height:48px;background:#D1FAE5;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#065F46;font-size:1.1rem;margin-bottom:1.25rem;}
+.svc-card h3{font-family:'DM Serif Display',serif;font-size:1.05rem;font-weight:400;color:#022C22;margin-bottom:.6rem;}
+.svc-card p{font-size:.85rem;color:#065F46;line-height:1.7;opacity:.75;}
+
+/* PROCESS — timeline style */
+.process{padding:6rem 6%;background:#fff;}
+.process-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.timeline{position:relative;margin-top:2.5rem;padding-left:2.5rem;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#065F46,#6EE7B7,transparent);}
+.tl-item{position:relative;margin-bottom:3rem;}
+.tl-dot{position:absolute;left:-3.1rem;top:.2rem;width:14px;height:14px;background:#065F46;border-radius:50%;border:3px solid #F0FDF4;}
+.tl-item h4{font-family:'DM Serif Display',serif;font-size:1.1rem;font-weight:400;color:#022C22;margin-bottom:.4rem;}
+.tl-item p{font-size:.875rem;color:#065F46;line-height:1.75;opacity:.75;}
+.metrics-card{background:#065F46;border-radius:24px;padding:2.5rem;color:#fff;}
+.metrics-card h3{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;margin-bottom:2rem;opacity:.9;}
+.m-item{margin-bottom:1.5rem;}
+.m-top{display:flex;justify-content:space-between;margin-bottom:.5rem;}
+.m-top span:first-child{font-size:.8rem;color:rgba(255,255,255,.6);}
+.m-top span:last-child{font-size:.8rem;color:#6EE7B7;font-weight:600;}
+.m-track{background:rgba(255,255,255,.1);border-radius:100px;height:6px;}
+.m-fill{height:100%;background:linear-gradient(90deg,#6EE7B7,#A7F3D0);border-radius:100px;}
+.feat-case{margin-top:2rem;background:rgba(255,255,255,.08);border-radius:14px;padding:1.25rem;}
+.feat-case-tag{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5);margin-bottom:.4rem;}
+.feat-case-amt{font-family:'DM Serif Display',serif;font-size:2rem;color:#6EE7B7;margin-bottom:.4rem;}
+.feat-case p{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.65;}
+
+/* TESTIMONIALS */
+.testimonials{padding:6rem 6%;background:#F0FDF4;}
+.t-hd{text-align:center;margin-bottom:4rem;}
+.t-hd .sec-sub{margin:0 auto;max-width:450px;}
+.t-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.tc{background:#fff;border:1px solid #C6E8D0;border-radius:20px;padding:2rem;}
+.tc-stars{color:#059669;font-size:.85rem;letter-spacing:2px;margin-bottom:1rem;}
+.tc blockquote{font-family:'DM Serif Display',serif;font-size:.95rem;font-weight:400;color:#064E3B;line-height:1.75;margin-bottom:1.5rem;border-left:3px solid #D1FAE5;padding-left:1rem;}
+.tc-rv{display:flex;align-items:center;gap:10px;}
+.tc-av{width:40px;height:40px;border-radius:50% 0 50% 50%;background:#065F46;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;}
+.tc-name{font-weight:700;font-size:.875rem;color:#022C22;}
+.tc-title{font-size:.75rem;color:#6EE7B7;}
+
+/* CONTACT */
+.contact{padding:6rem 6%;background:#fff;}
+.contact-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.c-info .sec-sub{margin-bottom:2.5rem;max-width:none;}
+.c-det{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;}
+.c-det-ic{width:44px;height:44px;background:#D1FAE5;border-radius:50% 0 50% 50%;display:flex;align-items:center;justify-content:center;color:#065F46;font-size:.95rem;flex-shrink:0;}
+.c-det h4{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:#6EE7B7;margin-bottom:3px;font-weight:600;}
+.c-det p{font-size:.9rem;font-weight:600;color:#022C22;}
+.form-panel{background:#F0FDF4;border:1px solid #C6E8D0;border-radius:24px;padding:2.5rem;}
+.form-panel h3{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:#022C22;margin-bottom:.35rem;}
+.form-panel>p{font-size:.8rem;color:#6EE7B7;margin-bottom:1.75rem;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.fg{margin-bottom:1rem;}
+label{display:block;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#065F46;margin-bottom:5px;}
+input,select,textarea{width:100%;background:#fff;border:1px solid #C6E8D0;border-radius:10px;padding:.72rem .9rem;color:#022C22;font-family:'DM Sans',sans-serif;font-size:.875rem;outline:none;appearance:none;transition:border-color .2s;}
+input:focus,select:focus,textarea:focus{border-color:#059669;box-shadow:0 0 0 3px rgba(5,150,105,.08);}
+select option{background:#fff;}
+textarea{resize:vertical;min-height:90px;}
+.sub-btn{width:100%;margin-top:.5rem;background:#065F46;color:#fff;border:none;padding:.95rem;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,transform .2s;}
+.sub-btn:hover{background:#047857;transform:translateY(-1px);}
+.f-note{display:flex;gap:7px;font-size:.73rem;color:#6EE7B7;margin-top:.9rem;line-height:1.6;align-items:flex-start;}
+
+/* INQUIRY */
+.inquiry{padding:5.5rem 6%;background:#F0FDF4;}
+.inq-in{max-width:680px;margin:0 auto;text-align:center;}
+.inq-in .sec-sub{margin:0 auto 2.5rem;}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.75rem;}
+.chip{background:#D1FAE5;border:1px solid #A7F3D0;border-radius:50px;padding:.35rem .9rem;font-size:.78rem;font-weight:600;color:#065F46;cursor:pointer;transition:all .2s;}
+.chip:hover,.chip.active{background:#065F46;color:#fff;border-color:#065F46;}
+.inq-form{background:#fff;border:1px solid #C6E8D0;border-radius:24px;padding:2rem;text-align:left;}
+
+/* FAQ */
+.faq{padding:6rem 6%;background:#fff;}
+.faq-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:5rem;}
+.faq-item{border-bottom:1px solid #E8F5E9;}
+details summary{list-style:none;cursor:pointer;padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.9rem;color:#022C22;user-select:none;}
+details summary::-webkit-details-marker{display:none;}
+.faq-tog{width:28px;height:28px;border-radius:50%;background:#D1FAE5;color:#059669;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;transition:all .2s;}
+details[open] .faq-tog{background:#065F46;color:#fff;}
+.faq-ans{font-size:.875rem;color:#065F46;line-height:1.8;padding-bottom:1.25rem;opacity:.8;}
+
+/* FOOTER */
+footer{background:#022C22;padding:4rem 6% 2rem;}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2rem;}
+.ft-brand p{font-size:.83rem;color:rgba(255,255,255,.4);line-height:1.8;margin-top:1rem;max-width:260px;}
+.ft-col h4{font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;color:rgba(255,255,255,.35);font-weight:700;margin-bottom:1rem;}
+.ft-col ul{list-style:none;}
+.ft-col li{margin-bottom:.55rem;}
+.ft-col a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:color .2s;}
+.ft-col a:hover{color:#6EE7B7;}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.ft-bot p{font-size:.75rem;color:rgba(255,255,255,.25);}
+.ft-badges{display:flex;gap:.5rem;}
+.ft-badge{background:rgba(110,231,183,.08);border:1px solid rgba(110,231,183,.2);border-radius:50px;padding:.25rem .8rem;font-size:.65rem;font-weight:700;color:rgba(110,231,183,.6);letter-spacing:.05em;}
+
+@media(max-width:900px){
+  .hero-main,.svc-header,.svc-cards,.t-cards,.contact-wrap,.faq-wrap,.ft-grid{grid-template-columns:1fr;gap:2rem;}
+  .hero-sidebar{display:none;}
+  .process-inner{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .f-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-leaf"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="logo-text">CyberShield Recovery<small>Certified Fraud Investigators</small></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Cases</a></li>
+    <li><a href="#inquiry">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Free Review</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-band">
+    <div class="band-item"><i class="fa-solid fa-certificate"></i> EFCC Certified</div>
+    <div class="band-item"><i class="fa-solid fa-shield-halved"></i> ISO 27001</div>
+    <div class="band-item"><i class="fa-solid fa-earth-africa"></i> Interpol Partner</div>
+    <div class="band-item"><i class="fa-solid fa-lock"></i> NDPR Compliant</div>
+    <div class="band-item"><i class="fa-solid fa-building-columns"></i> CBN Regulated</div>
+  </div>
+  <div class="hero-main">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="live-dot"></span> Active Recovery Operations</div>
+      <h1>Recover Your Lost Funds With <em>Elite Cyber Investigators</em></h1>
+      <p class="hero-desc">Nigeria's most trusted cybersecurity and financial fraud recovery firm. We deploy forensic intelligence, blockchain tracing, and legal enforcement to retrieve what is rightfully yours.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-green"><i class="fa-solid fa-file-magnifying-glass"></i> Start Free Case Review</a>
+        <a href="#process" class="btn-green-out"><i class="fa-regular fa-circle-play"></i> How It Works</a>
+      </div>
+    </div>
+    <div class="hero-sidebar">
+      <div class="sidebar-stat"><div class="ss-label"><i class="fa-solid fa-coins"></i> Total Recovered</div><div class="ss-val">&#8358;4.7B+</div><div class="ss-sub">Since 2013</div></div>
+      <div class="sidebar-stat"><div class="ss-label"><i class="fa-solid fa-folder-open"></i> Cases Closed</div><div class="ss-val">2,400+</div><div class="ss-sub">Across all fraud types</div></div>
+      <div class="sidebar-stat"><div class="ss-label"><i class="fa-solid fa-circle-check"></i> Recovery Rate</div><div class="ss-val">94%</div><div class="ss-sub">Industry leading</div></div>
+      <div class="sidebar-stat"><div class="ss-label"><i class="fa-solid fa-calendar"></i> Years Active</div><div class="ss-val">12</div><div class="ss-sub">Established 2013</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="t-item"><i class="fa-solid fa-certificate"></i> EFCC Certified Partners</div>
+  <div class="t-item"><i class="fa-solid fa-building-columns"></i> CBN Regulated</div>
+  <div class="t-item"><i class="fa-solid fa-shield-halved"></i> ISO 27001 Certified</div>
+  <div class="t-item"><i class="fa-solid fa-earth-africa"></i> Interpol Collaboration</div>
+  <div class="t-item"><i class="fa-solid fa-user-secret"></i> 100% Confidential</div>
+</div>
+
+<section class="services" id="services">
+  <div class="svc-header">
+    <div><div class="sec-tag">Our Expertise</div><div class="sec-h">What We Recover</div></div>
+    <p class="sec-sub">From crypto fraud to romance scams, our forensic experts and legal specialists handle every case type with precision.</p>
+  </div>
+  <div class="svc-cards">
+    <div class="svc-card"><div class="svc-ic"><i class="fa-brands fa-bitcoin"></i></div><h3>Cryptocurrency Recovery</h3><p>Blockchain forensics to trace and recover stolen Bitcoin, USDT, Ethereum, and all major digital assets from fraud and hacked wallets.</p></div>
+    <div class="svc-card"><div class="svc-ic"><i class="fa-solid fa-chart-candlestick"></i></div><h3>Investment and Forex Fraud</h3><p>Recovery from fake platforms, unregulated brokers, and Ponzi schemes. We work with international regulators to freeze and repatriate funds.</p></div>
+    <div class="svc-card"><div class="svc-ic"><i class="fa-solid fa-user-slash"></i></div><h3>Romance and Social Scams</h3><p>Identification, tracking, and prosecution of romance scammers. We trace money mule networks and coordinate seizures with law enforcement.</p></div>
+    <div class="svc-card"><div class="svc-ic"><i class="fa-solid fa-building-columns"></i></div><h3>Bank Wire Fraud (BEC)</h3><p>Rapid response to Business Email Compromise. We invoke SWIFT recall procedures within critical time windows for maximum recovery.</p></div>
+    <div class="svc-card"><div class="svc-ic"><i class="fa-solid fa-skull-crossbones"></i></div><h3>Ransomware and Extortion</h3><p>Forensic investigation and fund recovery post-ransomware. We identify perpetrators and pursue assets through proper legal channels.</p></div>
+    <div class="svc-card"><div class="svc-ic"><i class="fa-solid fa-mobile-screen-button"></i></div><h3>Mobile Money and POS Fraud</h3><p>Recovery from unauthorized transfers, SIM swap fraud, fake POS terminals, and compromised mobile banking applications.</p></div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="process-inner">
+    <div>
+      <div class="sec-tag">Our Method</div>
+      <div class="sec-h">How We Recover Your Funds</div>
+      <p class="sec-sub" style="margin-bottom:.5rem;">A structured, intelligence-driven process from first contact to successful recovery.</p>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><h4>Free Case Assessment</h4><p>Submit your case confidentially. Our analysts evaluate recoverability and trace initial fund movements within 24 hours at no cost.</p></div>
+        <div class="tl-item"><div class="tl-dot"></div><h4>Forensic Investigation</h4><p>Blockchain analytics, OSINT tools, and financial tracing to map the full money trail and identify perpetrators and asset locations.</p></div>
+        <div class="tl-item"><div class="tl-dot"></div><h4>Legal Enforcement Action</h4><p>We coordinate with EFCC, INTERPOL, and international law enforcement. Asset freezing orders and formal recovery proceedings are initiated.</p></div>
+        <div class="tl-item"><div class="tl-dot"></div><h4>Fund Repatriation</h4><p>Recovered assets returned through secure, documented channels with full transparency reports for every recovery.</p></div>
+      </div>
+    </div>
+    <div class="metrics-card">
+      <h3><i class="fa-solid fa-chart-pie" style="margin-right:8px;"></i>Recovery Metrics — Q1 2025</h3>
+      <div class="m-item"><div class="m-top"><span>Cryptocurrency Fraud</span><span>&#8358;892M Recovered</span></div><div class="m-track"><div class="m-fill" style="width:92%"></div></div></div>
+      <div class="m-item"><div class="m-top"><span>Forex Investment</span><span>&#8358;1.2B Recovered</span></div><div class="m-track"><div class="m-fill" style="width:87%"></div></div></div>
+      <div class="m-item"><div class="m-top"><span>Bank Wire Fraud</span><span>&#8358;540M Recovered</span></div><div class="m-track"><div class="m-fill" style="width:78%"></div></div></div>
+      <div class="m-item"><div class="m-top"><span>Romance Scams</span><span>&#8358;310M Recovered</span></div><div class="m-track"><div class="m-fill" style="width:65%"></div></div></div>
+      <div class="feat-case"><div class="feat-case-tag"><i class="fa-solid fa-star" style="margin-right:5px;"></i>Featured Case — Q1 2025</div><div class="feat-case-amt">&#8358;280,000,000</div><p>Recovered for a Lagos-based investment firm defrauded through a fake offshore trading platform. Full recovery achieved in 47 days.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="t-hd"><div class="sec-tag">Client Stories</div><div class="sec-h">Real People. Real Recoveries.</div><p class="sec-sub">Here is what our clients say after working with CyberShield Recovery.</p></div>
+  <div class="t-cards">
+    <div class="tc"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>I lost &#8358;4.5 million to a fake crypto exchange. CyberShield traced every transaction and had my money back in 5 weeks. These people are the real deal.</blockquote><div class="tc-rv"><div class="tc-av">AO</div><div><div class="tc-name">Adebayo Okonkwo</div><div class="tc-title">Business Owner, Abuja</div></div></div></div>
+    <div class="tc"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Our company lost $85,000 to a BEC scam. CyberShield invoked a SWIFT recall and recovered 90% within 3 weeks. Their speed and professionalism saved us.</blockquote><div class="tc-rv"><div class="tc-av">CE</div><div><div class="tc-name">Chidinma Eze, CFO</div><div class="tc-title">Technology Firm, Lagos</div></div></div></div>
+    <div class="tc"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>I was a victim of a romance scam that took everything from me. CyberShield recovered my funds and helped get the scammer prosecuted. Truly life-changing.</blockquote><div class="tc-rv"><div class="tc-av">RM</div><div><div class="tc-name">Ramatu Musa</div><div class="tc-title">Civil Servant, Kano</div></div></div></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-wrap">
+    <div class="c-info">
+      <div class="sec-tag">Get Started</div>
+      <div class="sec-h">Start Your Free Case Review</div>
+      <p class="sec-sub">Tell us what happened. Our team reviews every submission within 24 hours with absolute confidentiality.</p>
+      <div class="c-det"><div class="c-det-ic"><i class="fa-solid fa-phone"></i></div><div><h4>Emergency Hotline</h4><p>+234 800 732 6837</p></div></div>
+      <div class="c-det"><div class="c-det-ic"><i class="fa-solid fa-envelope"></i></div><div><h4>Secure Email</h4><p>recovery@cybershield.ng</p></div></div>
+      <div class="c-det"><div class="c-det-ic"><i class="fa-solid fa-location-dot"></i></div><div><h4>Head Office</h4><p>Plot 14, Adeola Odeku Street, Victoria Island, Lagos</p></div></div>
+      <div class="c-det"><div class="c-det-ic"><i class="fa-regular fa-clock"></i></div><div><h4>Response Time</h4><p>Within 24 hours — 7 days a week</p></div></div>
+    </div>
+    <div class="form-panel">
+      <h3>Submit Your Case</h3>
+      <p>All information is encrypted and strictly confidential.</p>
+      <div class="f-row"><div class="fg"><label>First Name</label><input type="text" placeholder="Chukwuemeka"></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Okafor"></div></div>
+      <div class="fg"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
+      <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+234 800 000 0000"></div>
+      <div class="fg"><label>Type of Fraud</label><select><option value="">Select fraud type...</option><option>Cryptocurrency Fraud</option><option>Investment / Forex Scam</option><option>Romance / Social Media Scam</option><option>Bank Wire Fraud (BEC)</option><option>Ransomware / Extortion</option><option>Mobile Money Fraud</option><option>Other</option></select></div>
+      <div class="f-row"><div class="fg"><label>Amount Lost (&#8358;)</label><input type="text" placeholder="e.g. 2,500,000"></div><div class="fg"><label>Date of Incident</label><input type="date"></div></div>
+      <div class="fg"><label>Brief Description</label><textarea placeholder="Describe what happened in as much detail as possible."></textarea></div>
+      <button class="sub-btn"><i class="fa-solid fa-paper-plane"></i> Submit Case for Free Review</button>
+      <div class="f-note"><i class="fa-solid fa-lock"></i><span>Your information is encrypted and never shared. A senior analyst will contact you within 24 hours.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="inquiry" id="inquiry">
+  <div class="inq-in">
+    <div class="sec-tag">Complaints and Inquiries</div>
+    <div class="sec-h">Send Us a Message</div>
+    <p class="sec-sub">General queries, complaints, or case follow-ups. We respond within 24 hours.</p>
+    <div class="chips">
+      <div class="chip active" onclick="setChip(this,'General Inquiry')">General Inquiry</div>
+      <div class="chip" onclick="setChip(this,'Complaint')">Complaint</div>
+      <div class="chip" onclick="setChip(this,'Case Follow-Up')">Case Follow-Up</div>
+      <div class="chip" onclick="setChip(this,'Media / Press')">Media / Press</div>
+      <div class="chip" onclick="setChip(this,'Partnership')">Partnership</div>
+    </div>
+    <div class="inq-form">
+      <div class="f-row"><div class="fg"><label>Full Name</label><input type="text" placeholder="Your full name"></div><div class="fg"><label>Email Address</label><input type="email" placeholder="you@example.com"></div></div>
+      <div class="fg"><label>Subject</label><input type="text" id="inq-subject" value="General Inquiry"></div>
+      <div class="fg"><label>Message</label><textarea style="min-height:110px" placeholder="Type your message here."></textarea></div>
+      <button class="sub-btn" onclick="sendInq()"><i class="fa-regular fa-envelope"></i> Send Message</button>
+      <div id="inq-ok" style="display:none;margin-top:1rem;background:#D1FAE5;border:1px solid #A7F3D0;border-radius:10px;padding:1rem;font-size:.82rem;color:#065F46;align-items:center;gap:8px;"><i class="fa-solid fa-circle-check" style="color:#059669;"></i> Message sent successfully. We will respond within 24 hours.</div>
+      <div class="f-note" style="margin-top:1rem;"><i class="fa-solid fa-circle-info" style="color:#059669;"></i><span>Urgent matters: call <strong>+234 800 732 6837</strong> directly.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq-wrap">
+    <div><div class="sec-tag">FAQ</div><div class="sec-h">Frequently Asked Questions</div><p class="sec-sub">Everything you need to know before starting your recovery.</p></div>
+    <div>
+      <div class="faq-item"><details><summary>How much does it cost to start a case?<span class="faq-tog"><i class="fa-solid fa-plus"></i></span></summary><p class="faq-ans">The initial assessment is completely free. We only charge a success fee upon confirmed recovery — you pay nothing unless we recover your funds.</p></details></div>
+      <div class="faq-item"><details><summary>How long does recovery take?<span class="faq-tog"><i class="fa-solid fa-plus"></i></span></summary><p class="faq-ans">Simple bank transfers: 2 to 4 weeks. Cryptocurrency and international cases: 4 to 12 weeks. You receive regular updates throughout.</p></details></div>
+      <div class="faq-item"><details><summary>Is my information safe with you?<span class="faq-tog"><i class="fa-solid fa-plus"></i></span></summary><p class="faq-ans">All data is AES-256 encrypted, ISO 27001 certified, and NDPR compliant. Your data is never shared without your consent.</p></details></div>
+      <div class="faq-item"><details><summary>Do you work with Nigerian law enforcement?<span class="faq-tog"><i class="fa-solid fa-plus"></i></span></summary><p class="faq-ans">Yes. We are certified EFCC partners collaborating with the Nigeria Police Cybercrime Unit, INTERPOL, and international intelligence units.</p></details></div>
+      <div class="faq-item"><details><summary>What if the scammer is based abroad?<span class="faq-tog"><i class="fa-solid fa-plus"></i></span></summary><p class="faq-ans">International cases are our specialty. We have relationships with intelligence units in over 35 countries for effective cross-border recovery.</p></details></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <a href="#" class="nav-logo"><div class="logo-leaf" style="background:rgba(255,255,255,.12);"><i class="fa-solid fa-shield-halved"></i></div><div class="logo-text" style="color:#fff;"><small style="color:rgba(255,255,255,.35);">Certified Fraud Investigators</small></div></a>
+      <p>Nigeria's premier cybersecurity and financial fraud recovery firm. Trusted by individuals, businesses, and institutions since 2013.</p>
+    </div>
+    <div class="ft-col"><h4>Services</h4><ul><li><a href="#">Crypto Recovery</a></li><li><a href="#">Investment Fraud</a></li><li><a href="#">Romance Scams</a></li><li><a href="#">Bank Wire Fraud</a></li><li><a href="#">Ransomware</a></li></ul></div>
+    <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Our Team</a></li><li><a href="#">Case Studies</a></li><li><a href="#">Careers</a></li></ul></div>
+    <div class="ft-col"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">NDPR Compliance</a></li><li><a href="#">AML Policy</a></li></ul></div>
+  </div>
+  <div class="ft-bot">
+    <p>&copy; 2025 CyberShield Recovery Ltd. RC 1847293. Victoria Island, Lagos, Nigeria.</p>
+    <div class="ft-badges"><div class="ft-badge">EFCC</div><div class="ft-badge">ISO 27001</div><div class="ft-badge">NDPR</div></div>
+  </div>
+</footer>
+
+<script>
+function setChip(el,s){document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');document.getElementById('inq-subject').value=s;}
+function sendInq(){const ok=document.getElementById('inq-ok');ok.style.display='flex';setTimeout(()=>ok.style.display='none',5000);}
+</script>
+</body>
+</html>
